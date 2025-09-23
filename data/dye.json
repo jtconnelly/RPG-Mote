@@ -1,0 +1,15 @@
+{
+    "name":"Dye",
+    "members":{
+        "generator":"NumberGenerator",
+        "sides":"uint32"
+    },
+    "methods":{
+        "roll":
+        {
+            "returns":"uint32",
+            "params":{},
+            "description":"Roll the dye and return the result"
+        }
+    }
+}

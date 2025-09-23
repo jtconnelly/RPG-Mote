@@ -1,0 +1,29 @@
+{
+    "name": "NumberGenerator",
+    "members":
+    {
+        "seed": "uint64"
+    },
+    "methods":
+    {
+        "generate":
+        {
+            "returns":"uint32",
+            "params":
+            {
+                "start":"uint32",
+                "end":"uint32"
+            },
+            "description":"Will generate a random integer between start to end"
+        },
+        "setSeed":
+        {
+            "returns":"void",
+            "params":
+            {
+                "val":"uint64"
+            },
+            "description":"Sets the seed to be used for the random number generator"
+        }
+    }
+}
