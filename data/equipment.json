@@ -1,0 +1,10 @@
+{
+    "name":"Equipment",
+    "members":
+    {
+        "id":"uint64",
+        "name":"str",
+        "isWeapon":"bool"
+    },
+    "methods":{}
+}

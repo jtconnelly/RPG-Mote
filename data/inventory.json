@@ -1,0 +1,49 @@
+{
+    "include":["Item", "Equipment"],
+    "name":"Inventory",
+    "members":
+    {
+        "capacity":"float",
+        "items":"map<Item,uint32>"
+    },
+    "methods":
+    {
+        "getItem":
+        {
+            "returns":"Item",
+            "params":
+            {
+                "id":"uint64"
+            },
+            "description":"get an item from the inventory"
+        },
+        "discardItem":
+        {
+            "returns":"void",
+            "params":
+            {
+                "id":"uint64",
+                "quantity":"uint32"
+            },
+            "description":"Permanently discard from inventory. If the specified quantity is greater or equal to the max of that item, all are removed"
+        },
+        "removeItemForUse":
+        {
+            "returns":"Item",
+            "params":
+            {
+                "id":"uint64"
+            },
+            "description":"Removes item from inventory to be used. This use can be consumption or throwing, depending on the specific item."
+        },
+        "addItem":
+        {
+            "returns":"bool",
+            "params":
+            {
+                "item":"Item"
+            },
+            "description":"Adds an item to the inventory if there is enough space or capacity, returns the result of attempting to add the item."
+        }
+    }
+}

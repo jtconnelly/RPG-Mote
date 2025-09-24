@@ -1,4 +1,5 @@
 {
+    "include": ["NumberGenerator"],
     "name":"Dye",
     "members":{
         "generator":"NumberGenerator",

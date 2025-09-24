@@ -1,0 +1,16 @@
+{
+    "name":"Item",
+    "members":{
+        "id":"uint64",
+        "name":"str"
+    },
+    "methods":{
+        "use":
+        {
+            "returns":"void",
+            "virtual":true,
+            "params":{},
+            "description":"Use this item, this will be built on later for the specific item, and the use will usually have some effect on the character."
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "include":["Inventory"],
+    "name":"Character",
+    "members":
+    {
+        "id":"uint64",
+        "name":"str",
+        "isPlayer":"bool",
+        "inventory":"Inventory"
+    },
+    "methods":{}
+}
