@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>$(SolutionDir)/bin/plugins/</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="LanguageInterface.dll">
+      <HintPath>$(SolutionDir)bin/lib/LanguageInterface.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
