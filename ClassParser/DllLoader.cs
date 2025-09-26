@@ -7,6 +7,11 @@ class DllLoader
     public static List<RPGMote.LanguageInterface> LoadSingleLib(string path)
     {
         var ans = new List<RPGMote.LanguageInterface>();
+        if (!path.EndsWith(".dll"))
+        {
+            Console.WriteLine("File loaded must be a .dll file");
+            return ans;
+        }
         try
         {
             // Load the assembly from the specified path
