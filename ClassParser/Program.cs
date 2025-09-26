@@ -16,7 +16,7 @@ class Program
 
         // Check if 'help' argument is passed and output help string
         // If Zero arguments are passed in then output help string
-        if (arguments.Count == 0 || arguments.ContainsKey("--help"))
+        if (arguments.ContainsKey("--help"))
         {
             PrintHelp();
             return; // Exit the application
