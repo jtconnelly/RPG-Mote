@@ -1,6 +1,7 @@
 using System.Collections;
 using System.IO;
 using System.Reflection;
+using RPGMote;
 
 class DllLoader
 {

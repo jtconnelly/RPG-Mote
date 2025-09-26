@@ -9,7 +9,9 @@
     <OutputPath>$(SolutionDir)bin/</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="../LanguageInterface/LanguageInterface.csproj" />
+    <Reference Include="LanguageInterface.dll">
+      <HintPath>$(SolutionDir)bin/lib/LanguageInterface.dll</HintPath>
+    </Reference>
     <Content Include="../data/**/*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <TargetPath>@(OutputPath)data/%(Filename)%(Extension)</TargetPath>

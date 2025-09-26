@@ -9,7 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../../../LanguageInterface/LanguageInterface.csproj" />
+    <Reference Include="LanguageInterface.dll">
+      <HintPath>$(SolutionDir)bin/lib/LanguageInterface.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
