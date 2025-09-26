@@ -37,28 +37,32 @@ class DllLoader
         string[] dir = Directory.GetFiles(path);
         foreach (string file in dir)
         {
-            try
+            if (!file.EndsWith(".dll"))
             {
-                // Load the assembly from the specified path
-                Assembly dll = Assembly.LoadFile(file);
-
-                foreach (Type type in dll.GetExportedTypes())
+                continue;
+            }
+            try
                 {
-                    Type? myInterface = type.GetInterface("RPGMote.LanguageInterface");
-                    if (myInterface != null)
+                    // Load the assembly from the specified path
+                    Assembly dll = Assembly.LoadFile(file);
+
+                    foreach (Type type in dll.GetExportedTypes())
                     {
-                        RPGMote.LanguageInterface? asIFace = Activator.CreateInstance(type) as RPGMote.LanguageInterface;
-                        if (asIFace != null)
+                        Type? myInterface = type.GetInterface("RPGMote.LanguageInterface");
+                        if (myInterface != null)
                         {
-                            ans.Add(asIFace);
+                            RPGMote.LanguageInterface? asIFace = Activator.CreateInstance(type) as RPGMote.LanguageInterface;
+                            if (asIFace != null)
+                            {
+                                ans.Add(asIFace);
+                            }
                         }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error loading or using DLL: {ex.Message}");
-            }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error loading or using DLL: {ex.Message}");
+                }
         }
         return ans;
     }

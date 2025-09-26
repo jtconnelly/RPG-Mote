@@ -74,12 +74,13 @@ class Program
                 // Begin calls to generate
                 if (!plugin.Generate(json, output_dir))
                 {
-                    Console.WriteLine($"Failed to generate class for {file}");
+                    Console.WriteLine($"Failed to generate {plugin.Language} class for {file}");
                 }
                 else
                 {
-                    Console.WriteLine($"Successfully generated class for {file} in {output_dir}");
+                    Console.WriteLine($"Successfully generated {plugin.Language} class for {file} in {output_dir}");
                 }
+                Console.WriteLine();
             }
         }
 
