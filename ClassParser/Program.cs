@@ -85,6 +85,9 @@ class Program
             }
         }
 
+        Console.WriteLine("------------------------------");
+        Console.WriteLine("Finished Generating! Exiting...");
+        Console.WriteLine("------------------------------");
     }
 
     static Dictionary<string, string?> ParseArguments(string[] args)
