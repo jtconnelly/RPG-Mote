@@ -1,0 +1,11 @@
+﻿using System.Text.Json;
+
+namespace RPGMote;
+
+public class PythonClassGenerator : LanguageInterface
+{
+    public bool Generate(JsonDocument parsedJson, string output_dir)
+    {
+        return true;
+    }
+}
