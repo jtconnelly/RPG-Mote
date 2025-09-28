@@ -5,12 +5,6 @@ using System.Text.Json;
 
 namespace RPGMote;
 
-internal struct Method
-{
-    public string returnVal;
-    public Dictionary<String, String> paramList;
-    public string comment;
-}
 public class CppClassGenerator : LanguageInterface
 {
     internal Dictionary<String, String> valueConversions = new Dictionary<String, String>
@@ -38,7 +32,7 @@ public class CppClassGenerator : LanguageInterface
     }
     public string Language { get; set; }
 
-    internal bool GenerateHeader(string output_dir, string className, List<String> includes, Dictionary<String, String> members, Dictionary<String, Method> methods)
+    internal bool GenerateHeader(string output_dir, string className, List<String> includes, Dictionary<String, String> members, Dictionary<String, RPGMote.Method> methods)
     {
         HashSet<String> convertedIncludes = new HashSet<String>();
         string output = "";
@@ -187,13 +181,13 @@ public class CppClassGenerator : LanguageInterface
         }
 
         JsonElement methodElement = rootElem.GetProperty("methods");
-        Dictionary<String, Method> methodList = new Dictionary<String, Method>();
+        Dictionary<String, RPGMote.Method> methodList = new Dictionary<String, RPGMote.Method>();
         foreach (JsonProperty methodProp in methodElement.EnumerateObject())
         {
             string funcName = methodProp.Name;
             JsonElement funcInfo = methodProp.Value;
             JsonElement returnProp, paramProp, descriptionProp;
-            Method methodInfo = new Method();
+            RPGMote.Method methodInfo = new Method();
             if (funcInfo.TryGetProperty("returns", out returnProp))
             {
                 string? ret = returnProp.GetString();
